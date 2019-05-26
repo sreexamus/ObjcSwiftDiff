@@ -1,0 +1,4 @@
+
+1. Objective-C Lazy instantiation pattern for mutable arrays in classes.
+
+https://stackoverflow.com/questions/19108219/in-objective-c-lazy-instantiation-why-dont-we-touch-the-setter

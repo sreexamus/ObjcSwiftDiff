@@ -1,0 +1,63 @@
+1. Objc has variables declarations with type mentioned
+ 
+ NSString *str = "Reckon"
+ const int num = 10;
+ 
+Swift doesn't need to have type declared. type is inferred from the values so it is strongly typed language.
+ 
+ var name = "Reckon"
+ let number = 10
+ 
+ 
+2.Objc - all are reference types(string, arrays, dictionaries, collections, blocks, dispatch queues) all are built by classes 
+swift - all are value types(strings, arrays, dictionaries) are built by structs except closures, dispatch queues
+
+3.Objc has Categories
+Swift had Extensions
+
+4.Objc has no protocols support on Enums or structs
+Swift has support of protocols on Enums or structs.
+
+5. Swift has tuples, Optionals, higher order functions which objc does not have.
+  
+6. Objc objects are created using malloc
+
+  NewClass a* = [[NewClass malloc] init]
+  
+  In Siwft
+  
+  let a = NewClass()
+  
+7. Swift supports Computed properties where proeprties can be computed when accessed. It also supports property observers.
+
+   var name: String {
+         didSet { // property observer
+             label.text = name
+         }
+   }
+   
+   var name: String {
+           get { return name }
+           set {   label.text = newValue }
+   }
+   
+ 8. As optioanls are supported in Swift. It supports Nil coalescing
+ 
+          var value: String? = nil
+          var actualValue = value ?? "default" . // if value is nil then set default value
+          
+    It also supports optional chaining, binding
+    
+    struct Person { var name: String }
+    var person: Person? = nil
+    person?.name . // using ? after the variable provides the ability of the values exists then it unwraps it
+    
+    
+    If let person = person {
+        print(person.name)
+    }
+    
+    guard let person = person else {
+          return
+    }
+    print(person.name)

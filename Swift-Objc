@@ -77,3 +77,34 @@ Swift has support of protocols on Enums or structs.
      array2.append(4)
 
      print("array2 changed address ... \(address(array2))")  //0x6000000aa100
+     
+  10.  If we want a class to have variable publicly accessed but not override in other classes other than its own.
+  
+       Swift:-  
+         class Person {
+            private(set) var name?
+            init(value: String) {
+              name = value
+            }
+         }
+      
+      Objc:-
+       
+      Interface file Person.h
+      @interface Person: NSObject {
+          @property(nonatomic, readonly) NSString *name;
+      }
+      
+      Implementation file Person.m
+      
+      @interface Person() {
+       @property(nonatomic,readwrite) NSString *name;
+      }
+       
+      @implementation
+      
+      @end
+      
+      
+         
+         

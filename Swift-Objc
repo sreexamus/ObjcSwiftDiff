@@ -61,3 +61,19 @@ Swift has support of protocols on Enums or structs.
           return
     }
     print(person.name)
+    
+  9. Siwt arrays dictionaries, collections have copy on write feature to improve performance of value types
+
+     func address(_ o: UnsafeRawPointer ) {
+         print(String(format: "%p", Int(bitPattern: o)))
+     }
+
+     var array1: [Int] = [0, 1, 2, 3]
+     var array2 = array1
+
+     print("array1... \(address(array1))") //0x600000078de0
+     print("array2... \(address(array2))")  //0x600000078de0
+     //Let's mutate array2 to see what's
+     array2.append(4)
+
+     print("array2 changed address ... \(address(array2))")  //0x6000000aa100

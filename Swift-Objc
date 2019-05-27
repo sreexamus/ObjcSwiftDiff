@@ -104,6 +104,31 @@ Swift has support of protocols on Enums or structs.
       @implementation
       
       @end
+     
+    11. The we implement optionals in objective-c is as below (https://useyourloaf.com/blog/using-nullable-to-annotate-objective-c/)
+    
+            Marking types as nonnull imports them as non-optional in Swift. 
+            Marking types as nullable imports them as optional in Swift.
+            
+          objc:-  @property (nonnull,copy,readonly) NSString *name;
+          swift: public var name: String { get }
+          
+          objc:-  @property (nullable,copy,readonly) NSString *name;
+          swift: public var name: String? { get }
+         
+          objc:-  - (nullable instancetype)initWithName:(nonnull NSString *)name;
+          swift:- public init?(name: String)
+
+          To Make complete block Non Null.
+          
+            NS_ASSUME_NONNULL_BEGIN
+            @interface Robot : NSObject
+            @property (copy,readonly) NSString *name;
+            - (nullable instancetype)initWithName:(NSString *)name;
+            - (nullable NSString *)tellMeSomething;
+            @end
+            NS_ASSUME_NONNULL_END
+
       
       
          

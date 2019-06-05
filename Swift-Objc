@@ -128,7 +128,25 @@ Swift has support of protocols on Enums or structs.
             - (nullable NSString *)tellMeSomething;
             @end
             NS_ASSUME_NONNULL_END
+            
+          
+    12. Objc does not support method overloading.
+      -(NSString*) getName:(NSString *) id forParent:(NSString *) parent;
+      -(NSString*) getName:(NSString *) id forParent:(NSString *) parent1;
+         getName, forParent can not be same.
+         
+         Swift supports method overloading.
 
+   13. when we declare a delegate variable in Objective c. we check whether the delegate object has the method implemented by
+   respondsToSelector. 
+
+          if ([delegate respondsToSelector:@selector(methodName:withEtc:)]) {
+                [delegate methodName:123 withEtc:456];
+          }
+      
+      In Swift delegate can be optional.
+          delegate?.methodName(123, withETC: 456)
+    
       
       
          
